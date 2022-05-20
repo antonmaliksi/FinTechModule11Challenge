@@ -81,15 +81,17 @@ To use the notebook in Google Colab:
         infer_datetime_format=True
     )
     ```
-Altering how we read a csv, we will use the ```files``` package within the ```google.colab``` library to create the ```uploaded = files.upload()``` function. This enables the user to select which .CSV file they would like to upload. The syntax below sets the "Date" column as the index and follows further DataFrame parameters.
+Altering how we read a csv, we will use the ```files``` package within the ```google.colab``` library to create the<br> ```uploaded = files.upload()``` function. This enables the user to select which .CSV file they would like to upload. The syntax below sets the "Date" column as the index and follows further DataFrame parameters.
 
 ### Focus the Data
 Before analyzing the data, we need to focus our data. We want to look at May 2020, a time period when MercadoLibre released its financial results. How did this event affect our search traffic?
 To do this, we did the following:
+    
     ```python
     traffic_may_2020 = df_mercado_trends.loc["5/1/20":"5/31/20"].sum()
     
-    median_monthly_traffic = df_mercado_trends["Search Trends"].groupby(by=[df_mercado_trends.index.year, df_mercado_trends.index.month]).sum().median()
+    median_monthly_traffic = df_mercado_trends["Search Trends"].groupby(
+    by=[df_mercado_trends.index.year, df_mercado_trends.index.month]).sum().median()
     
     print(traffic_may_2020 / median_monthly_traffic)
     ```
@@ -127,7 +129,7 @@ Principal Component Analysis (PCA) is a statistical technique used to accelerate
     ```
 Please ensure that you have the correct .CSV file uploaded.
 
-As recent world events have shown, we cannot fully predict how the market will perform. With the recent COVID-19 pandemic, many companies and global financial markets received a shock in the first half of 2020. We will look at our market data during that time using the following code: ```first_half_2020 = mercado_stock_trends_df.loc["2020-01":"2020-06"]```
+As recent world events have shown, we cannot fully predict how the market will perform. With the recent COVID-19 pandemic, many companies and global financial markets received a shock in the first half of 2020. We will look at our market data during that time using the following code:<br> ```first_half_2020 = mercado_stock_trends_df.loc["2020-01":"2020-06"]```
 
 To show the relationship of our closing prices and search trends at that time, we will visualize the sliced data:
 
@@ -195,9 +197,11 @@ The Finance Division of MercadoLibre wants a forecast of the total sales for the
 ![forecast2](https://github.com/antonmaliksi/FinTechModule11Challenge/blob/main/Readme%20Resources/forecast2.PNG)
 4. Manipulate the data to find our expected sales, worst-case sales, and best-case sales:
     ```python
-    mercado_sales_forecast_quarter = mercado_sales_prophet_forecast[["yhat", "yhat_lower", "yhat_upper"]].loc["2020-07-01":"2020-09-30"]
+    mercado_sales_forecast_quarter = mercado_sales_prophet_forecast[
+    ["yhat", "yhat_lower", "yhat_upper"]].loc["2020-07-01":"2020-09-30"]
     
-    mercado_sales_forecast_quarter = mercado_sales_forecast_quarter.rename(columns={"yhat":"Expected Sales", "yhat_lower":"Worst-Case", "yhat_upper":"Best-Case"})
+    mercado_sales_forecast_quarter = mercado_sales_forecast_quarter.rename(
+    columns={"yhat":"Expected Sales", "yhat_lower":"Worst-Case", "yhat_upper":"Best-Case"})
     
     mercado_sales_forecast_quarter.sum()
     ```
