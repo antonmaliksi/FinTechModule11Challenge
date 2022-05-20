@@ -26,7 +26,7 @@ This notebook utilizes **Python (v 3.9.7)** and the following libraries:
 6. %matplotlib inline
 7. pystan
 
-This notebook is used in conjunction with Google Colab Notebooks. Please click [here](https://colab.research.google.com/drive/12p9oihYAqmQ5YMZV7JvohKAwm1cveDHX?usp=sharing) to view in Google Colab.
+This notebook is used in conjunction with Google Colab Notebooks. ##__Please click [here](https://colab.research.google.com/drive/12p9oihYAqmQ5YMZV7JvohKAwm1cveDHX?usp=sharing) to view in Google Colab.
 
 ---
 
@@ -93,6 +93,7 @@ To do this, we did the following:
     
     print(traffic_may_2020 / median_monthly_traffic)
     ```
+    
 Using these values, we observed that search traffic increased by 8% during the month that MercadoLibre released its financial results.
 
 ### Mine the Search Traffic Data for Seasonality
@@ -145,8 +146,8 @@ Based on the data given from the correlation, we see that a -14% relationship ex
 ### Create a Time Series Model with Prophet
 According to [Facebook Prophet](https://facebook.github.io/prophet/), Prophet is "a forecasting procedure that provides completely automated forecasts". We will be using Prophet to create time-series models that analyzes and forecasts patterns across a broad spectrum of data types.
 
-To use Prophet properly, we must convert our column names to that which the API will identify:
-
+To use Prophet properly, we must:
+1. Convert our DataFrame:
     ```python
     mercado_prophet_df = df_mercado_trends.reset_index()
     
@@ -159,12 +160,12 @@ To use Prophet properly, we must convert our column names to that which the API 
     
 After producing our new DataFrame, we can create our model DataFrame using the ```Prophet()``` function. Fit this model to the previously created DataFrame.
 
-To create prediction that will go as far as 2000 hours(approximately 80 days), run the following:
+To create prediction that will go as far as 2000 hours(approximately 80 days), run the following: <br>
     ```python
     future_mercado_trends = model_mercado_trends.make_future_dataframe(periods=2000, freq="H")
     ```
 
-Make predictions for the data with the following:
+Make predictions for the data with the following: <br>
     ```python
     forecast_mercado_trends = model_mercado_trends.predict(future_mercado_trends)
     ```
