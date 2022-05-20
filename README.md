@@ -10,7 +10,7 @@ This analysis utilizes the following steps:
 4. Creating a time sereis model with Prophet.
 5. Forecasting revenue using time series models.
 
-![logo](url)
+![logo](https://github.com/antonmaliksi/FinTechModule11Challenge/blob/main/Readme%20Resources/unnamed.png)
 
 ---
 
@@ -100,13 +100,13 @@ As a marketing company, we need to utilize every bit (or byte) of data at our di
 
 Hourly Search Data by Day of Week                         |  Heatmap of Search Trends
 :----------------------------------------:|:----------------------------------------:
-![line](url)  | ![heatmap](url)
+![line](https://github.com/antonmaliksi/FinTechModule11Challenge/blob/main/Readme%20Resources/hourbyweek.PNG)  | ![heatmap](https://github.com/antonmaliksi/FinTechModule11Challenge/blob/main/Readme%20Resources/heatmap.PNG)
 
 Why is this data relevant? Using the data, we observe that hours 23-02 on every day of the week have the greatest amount of search trends compared to any other time displayed. This information will enable our marketing team to deploy ads or relevant search data during peak hours to brute-force our internet dominance, or deploy during our least-search times of the day to establish a stronger basline of presence.
 
 We can also use this data to find which weeks of the year have the highest traffic, as shown below:
 
-![weeks](url)
+![weeks](https://github.com/antonmaliksi/FinTechModule11Challenge/blob/main/Readme%20Resources/weeks.PNG)
 
 Search Traffic tends to increase during the winter holiday period beginning in week 42, with a slight decrease in weeks 45 and 49, culminating in a high in week 51.
 
@@ -130,13 +130,13 @@ As recent world events have shown, we cannot fully predict how the market will p
 
 To show the relationship of our closing prices and search trends at that time, we will visualize the sliced data:
 
-![twin](url)
+![twin](https://github.com/antonmaliksi/FinTechModule11Challenge/blob/main/Readme%20Resources/twin.PNG)
 
 The data clearly shows a massive decrease in search trends and closing prices during May 2020. 
 
 But why is this important? We will use these metrics to show our Stock Volatility versus the Search Trends over time:
 
-![volatile](url)
+![volatile](https://github.com/antonmaliksi/FinTechModule11Challenge/blob/main/Readme%20Resources/volatile.PNG)
 
 This data can further be used to construct a correlation table using the following code: ```mercado_stock_trends_df[["Stock Volatility", "Lagged Search Trends", "Hourly Stock Return"]].corr()```
 
@@ -171,7 +171,7 @@ Make predictions for the data with the following:
 
 This will provide us with the following visual forecast:
 
-![forecast](url)
+![forecast](https://github.com/antonmaliksi/FinTechModule11Challenge/blob/main/Readme%20Resources/forecast.PNG)
 
 Viewing the data, we an se that the near-term forecast for the popularity of MercadoLibre will have a gradual decline until October 2020, upon when it will begin to increase.
 
@@ -191,7 +191,7 @@ The Finance Division of MercadoLibre wants a forecast of the total sales for the
     ```
 2. Repeat the steps used for Prophet.
 3. Produce a forecast:
-![forecast2](url)
+![forecast2](https://github.com/antonmaliksi/FinTechModule11Challenge/blob/main/Readme%20Resources/forecast2.PNG)
 4. Manipulate the data to find our expected sales, worst-case sales, and best-case sales:
     ```python
     mercado_sales_forecast_quarter = mercado_sales_prophet_forecast[["yhat", "yhat_lower", "yhat_upper"]].loc["2020-07-01":"2020-09-30"]
