@@ -85,8 +85,8 @@ Altering how we read a csv, we will use the ```files``` package within the ```go
 
 ### Focus the Data
 Before analyzing the data, we need to focus our data. We want to look at May 2020, a time period when MercadoLibre released its financial results. How did this event affect our search traffic?
-To do this, we did the following:
-    
+
+1. Focus the data:    
     ```python
     traffic_may_2020 = df_mercado_trends.loc["5/1/20":"5/31/20"].sum()
     
